@@ -22,8 +22,7 @@ function Header(){
                   <Favorites />
                   <Cart />
                 </div>
-            </div>
-                
+            </div>  
         </div>
     );
 }

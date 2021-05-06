@@ -15,37 +15,14 @@ function Items(){
     )
 
     }  
+function Items3(){    
+    return GetItems(6)
+    }
 
 function Items2(){    
-    const [items, setItems]= useState([])
-    useEffect(()=>
-    {
-    const getItems= async () =>{
-    const results = await axios.post("https://lamp.ms.wits.ac.za/home/s2172765/clothing.php", {ID: 1})
-    setItems(results.data)
-    }
-    getItems()
-    },[])
-    
-    return (
-        <div className="items">{items.slice(0,4).map((item)=><ItemBox category="Daily deals" itemName={item.NAME} orgPrice={item.PRICE} image={item.PICTURE} discount="" rating="0(0)" desc={item.DESCRIPTION}></ItemBox>)}</div>
-         )
-    }
- 
- function Items3(){    
-    const [items, setItems]= useState([])
-    useEffect(()=>
-    {
-    const getItems= async () =>{
-    const results = await axios.post("https://lamp.ms.wits.ac.za/home/s2172765/clothing.php", {ID: 6})
-    setItems(results.data)
-    }
-    getItems()
-    },[])
-    return (
-        <div className="items">{items.slice(0,4).map((item)=><ItemBox category="Daily deals" itemName={item.NAME} orgPrice={item.PRICE} image={item.PICTURE} discount="" rating="0(0)" desc={item.DESCRIPTION} ></ItemBox>)}</div>
-    )
-    }
+    return GetItems(1);   
+ }
+
 
 function Items4(){    
         return(
@@ -77,5 +54,20 @@ Cosmetic Condition: CPO - Grade B- Device is in excellent condition. Keys A and 
                 </div>
         );
     }
-
+function GetItems(dept_code){
+    const [items, setItems]= useState([])
+    useEffect(()=>
+    {
+    const getItems= async () =>{
+    const results = await axios.post("https://lamp.ms.wits.ac.za/home/s2172765/clothing.php", {ID: dept_code})
+    setItems(results.data)
+    }
+    getItems()
+    
+    },[dept_code])
+    
+    return (
+        <div className="items">{items.slice(0,4).map((item)=><ItemBox category="Daily deals" itemName={item.NAME} orgPrice={item.PRICE} image={item.PICTURE} discount="" rating="0(0)" desc={item.DESCRIPTION}></ItemBox>)}</div>
+         )
+}
 export {Items, Items2, Items3, Items4};
