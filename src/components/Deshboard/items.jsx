@@ -60,12 +60,9 @@ function GetItems(dept_code){
     useEffect(()=>
     {
     const getItems= async () =>{
-    try {
-        const results = await axios.post("https://lamp.ms.wits.ac.za/home/s2172765/clothing.php", {ID: dept_code})
-        setItems(results.data)
-    } catch (err) {
-        console.log(err);
-        }
+        await axios.post("https://lamp.ms.wits.ac.za/home/s2172765/clothing.php", {ID: dept_code})
+        .then(response => setItems(response.data))
+        .catch(error => console.log(error))
     };
     getItems()
     },[dept_code])
