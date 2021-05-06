@@ -56,14 +56,18 @@ Cosmetic Condition: CPO - Grade B- Device is in excellent condition. Keys A and 
     }
 function GetItems(dept_code){
     const [items, setItems]= useState([])
+    
     useEffect(()=>
     {
     const getItems= async () =>{
-    const results = await axios.post("https://lamp.ms.wits.ac.za/home/s2172765/clothing.php", {ID: dept_code})
-    setItems(results.data)
-    }
+    try {
+        const results = await axios.post("https://lamp.ms.wits.ac.za/home/s2172765/clothing.php", {ID: dept_code})
+        setItems(results.data)
+    } catch (err) {
+        console.log(err);
+        }
+    };
     getItems()
-    
     },[dept_code])
     
     return (
