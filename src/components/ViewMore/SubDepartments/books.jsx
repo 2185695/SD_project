@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-import React from 'react';
-=======
+
 import React,{useState} from 'react';
->>>>>>> 6a113119946d4a49aab04dbd5ed03a6395450489
 
 function Books() {
 
