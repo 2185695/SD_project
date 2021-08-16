@@ -4,8 +4,7 @@ import Header from '../Deshboard/Header';
 import Nav from '../Deshboard/catNavBar';
 import Footer from "../Deshboard/Footer";
 import ItemBox from "../Deshboard/itemBox";
-import DepartmentsBar from "../Deshboard/departmentsBar"
-import {Body, departmentCode} from "../Deshboard/Body";
+
 import Books from "./SubDepartments/books"
 import Clothing from "./SubDepartments/clothing"
 import Computers from "./SubDepartments/computers"
