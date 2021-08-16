@@ -33,6 +33,7 @@ function OrderBody(){
         };
         getItems()
         localStorage.setItem("Items",JSON.stringify(items));
+        console.log(items)
         },[dept_code,items])
         return (
             <div className="items">{items.map((item)=><OrderBox Name={User} orderNumber={item.ORDER_NO} Product={JSON.parse(item.PRODUCT_NAME)} date={item.DATE} Address = {JSON.parse(item.ADDRESS)} ></OrderBox>)}</div>
