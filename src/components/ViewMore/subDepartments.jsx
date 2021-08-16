@@ -15,8 +15,6 @@ import Health from "./SubDepartments/health"
 function SubDepartments(){
     const [items, setItems]= useState([])
     const dept_code = sessionStorage.getItem('SubdeptCode');
-    // const book_dept_code = sessionStorage.getItem('BookdeptCode');
-    
     useEffect(()=>
     {
     const getItems= async () =>{
@@ -36,6 +34,7 @@ function SubDepartments(){
         dept = <Computers/>;
         
     }
+
     else if (dept_code == 104 || dept_code == 103 ){
         category = "Books";
         dept = <Books/>;

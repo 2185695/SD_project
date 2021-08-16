@@ -184,7 +184,7 @@ class Suggest extends React.Component {
             }, (error) => {
                 alert(error)
                 console.log(error)
-            });
+            }).catch(error => console.log(error));
     };
 
     onChangeStreet = (event, { newValue, method }) => {
