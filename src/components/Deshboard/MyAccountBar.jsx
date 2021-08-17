@@ -27,7 +27,7 @@ class MyAccountBar extends Component{
                                         )
 
                                 }}>Invoices</a></li>
-                                {/* <li><a href="#">Exchanges & Returns</a></li> */}
+                               
                             </ul>
                         </li>
                         

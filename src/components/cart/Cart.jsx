@@ -16,6 +16,7 @@ function Address(email){
         .catch(error => console.log(error))
     }
     getItems();
+    console.log(items)
     localStorage.setItem("Address", JSON.stringify(items))
     },[email, items]);  
 }
@@ -32,9 +33,7 @@ function Cart() {
         email = '';
     }
     Address(email);
-    var temp = JSON.parse(localStorage.getItem("Address"));
-    console.log(temp)
-
+    
     const [removed, setDisplay] = useState({
         idx: -1
     })

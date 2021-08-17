@@ -27,11 +27,12 @@ class OrderBox extends Component{
         var price = this.props.Product[0].PRICE.split(",");
         var name = this.props.Product[0].NAME.split(",");
         var both = [];
+        var P = 0;
         for (var i =1;i<price.length;i++){
             var temp = {Name: name[i], Price: price[i]}
+            P = P + parseInt(price[i])
             both.push(temp);
         }
-
 
         if(this.state.viewDetails === false){
             return <div className="order">   
@@ -44,7 +45,7 @@ class OrderBox extends Component{
                     <div className="details values">
                         <div >
                             <h6 className="address">Shipping address</h6>
-                            <p> {this.props.deliveryAddress}
+                            <p>  {this.props.Address.Street +' '+ this.props.Address.Surburb +' '+ this.props.Address.City}
                             </p>
                         </div>
                         <div>
@@ -53,7 +54,7 @@ class OrderBox extends Component{
                         </div>
                         <div>
                             <h6 className="summary">Order summary</h6>
-                            <p> {this.props.count} items  R {this.props.price}</p>
+                            <p> {this.props.count} items  R {P} </p>
                             <p> Delivery fee  R 0</p>
                         </div>
                     </div>

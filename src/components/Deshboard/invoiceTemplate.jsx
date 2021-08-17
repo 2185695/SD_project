@@ -29,8 +29,8 @@ function Table({ItemDetails,DATE,OrderNum}){
         var temp = {Name: name[i], Price: price[i]}
         both.push(temp);
     }
-    for(var i = 0; i< price.length; i++){
-        ppp+=Number(price[i])
+    for(var k = 0; k< price.length; k++){
+        ppp+=Number(price[k])
     }
 
     return (

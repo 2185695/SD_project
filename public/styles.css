@@ -700,7 +700,6 @@ body {
   min-width: 500px;
   max-width: 900px;
   margin: 2vh 5vh 5vh 5%;
-  padding: 5px;
   border-radius: 4px;
   box-shadow: 2px 2px 4px grey;
   position: relative;
@@ -741,7 +740,8 @@ body {
   border-style: solid;
   border-width: 0.1px;
   border-radius: 2px;
-  margin: 1px;
+  padding: 2px;
+  margin: 10px;
 }
 
 .orderBody .orders .order .details {
@@ -760,7 +760,7 @@ body {
 }
 .orderBody .orders .order .values {
   margin: 0px;
-  padding: 4px 5vw;
+  padding: 5px;
   display: grid;
   grid-template-columns: repeat(3, 33%);
 }

@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import { Collapse, Navbar, NavbarToggler, Nav, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 
@@ -9,13 +9,11 @@ const DepartmentsBar = () => {
 
     const [deptCode, setDeptCode]= useState();
     sessionStorage.setItem('SubdeptCode', deptCode);
-    // sessionStorage.setItem('deptCode', deptCode);
 
     return (
         <div className="departments">
             <h3 className="departmentHeading">Departments</h3>
 
-            {/* <ul className="departmentItems" > */}
 
             <div>
                 <Navbar light expand="md" >
@@ -33,10 +31,6 @@ const DepartmentsBar = () => {
                                     <div className="depDroplist"  >
                                         
                                         <DropdownMenu left color="primary" >
-                                            
-                                            {/* <DropdownItem  onClick={()=>setDeptCode(3)}>
-                                            <a href="/viewMore">All Books</a>
-                                            </DropdownItem> */}
 
                                             <DropdownItem  onClick={()=>setDeptCode(104)}>
                                             <a href="/subDepartments">Fiction</a>
