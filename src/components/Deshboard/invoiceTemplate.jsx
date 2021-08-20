@@ -3,20 +3,6 @@ import LOGO from "../../logo.svg";
 
 function Table({ItemDetails,DATE,OrderNum}){
 
-    const handleItems = ()=>{
-        const table = document.getElementById('invoice-items');
-        var items = JSON.parse(localStorage.getItem("Items"))
-        items.forEach(element => {
-            var row = table.insertRow(0);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            var cell3 = row.insertCell(2)
-            cell1.innerHTML = element[0];
-            cell2.innerHTML = element[1];
-            cell3.innerHTML = element[2];
-        }); 
-    }
-
     let date = new Date();
     date = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
     const user = JSON.parse(localStorage.getItem('userDetails'));
@@ -30,7 +16,7 @@ function Table({ItemDetails,DATE,OrderNum}){
         both.push(temp);
     }
     for(var k = 0; k< price.length; k++){
-        ppp+=Number(price[k])
+        ppp += Number(price[k])
     }
 
     return (

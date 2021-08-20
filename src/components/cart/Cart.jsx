@@ -7,7 +7,9 @@ import Empty from './Empty';
 import axios from 'axios';
 
 function Address(email){
-    const [items, setItems]= useState([{}])
+
+    const [items, setItems] = useState([{}])
+    
     useEffect(()=>
     {
     const getItems= async () =>{
