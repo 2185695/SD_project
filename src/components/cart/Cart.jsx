@@ -9,7 +9,7 @@ import axios from 'axios';
 function Address(email){
 
     const [items, setItems] = useState([{}])
-    
+
     useEffect(()=>
     {
     const getItems= async () =>{
@@ -24,7 +24,6 @@ function Address(email){
 }
 
 function Cart() {
-    const CartItems = JSON.parse(localStorage.getItem("CartItems"));
     
     let email;
     if(JSON.parse(localStorage.getItem('userDetails')) !== null){
@@ -35,6 +34,8 @@ function Cart() {
         email = '';
     }
     Address(email);
+    
+    const CartItems = JSON.parse(localStorage.getItem("CartItems"));
     
     const [removed, setDisplay] = useState({
         idx: -1

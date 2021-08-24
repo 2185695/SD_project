@@ -78,6 +78,7 @@ const slideWidth = () => {
         backgroundRepeat: 'no-repeat',
         backgroundPosition: '50% 60%'
     }
+    // eslint-disable-next-line jsx-a11y/alt-text
     return <img className="modalImage img" style={styles}></img>
     }
     
