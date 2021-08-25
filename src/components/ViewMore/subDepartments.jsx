@@ -14,7 +14,7 @@ import Health from "./SubDepartments/health"
 
 function SubDepartments(){
     const [items, setItems]= useState([])
-    const dept_code = sessionStorage.getItem('SubdeptCode');
+    var dept_code = sessionStorage.getItem('SubdeptCode');
     useEffect(()=>
     {
     const getItems= async () =>{
@@ -27,34 +27,33 @@ function SubDepartments(){
 
     // SET THE CATEGORY TITLE DYNAMICALLY
     var category = "";
-    var dept = <Clothing/>;
+    let dept;
+    dept_code = Number(dept_code)
 
-    if (dept_code == 100 || dept_code == 112 || dept_code == 121){
+    if (dept_code === 100 || dept_code === 112 || dept_code === 121){
         category = "Computer & Electronics";
         dept = <Computers/>;
         
     }
 
-    else if (dept_code == 104 || dept_code == 103 ){
+    else if (dept_code === 104 || dept_code === 103 ){
         category = "Books";
         dept = <Books/>;
 
     }
-    else if (dept_code == 109 || dept_code == 111 || dept_code == 110 || dept_code == 128){
+    else if (dept_code === 109 || dept_code === 111 || dept_code === 110 || dept_code === 128){
         category = "Clothing";
-        dept = category;
         dept = <Clothing/>;
 
     }
 
-    else if (dept_code == 122 || dept_code == 123 || dept_code == 127 || dept_code == 125 || dept_code == 126 || dept_code == 124){
+    else if (dept_code === 122 || dept_code === 123 || dept_code === 127 || dept_code === 125 || dept_code === 126 || dept_code === 124){
         category = "Sports & Training";
         dept = <Sports/>;
     }
 
-    else if (dept_code == 114 || dept_code == 115|| dept_code == 116 || dept_code == 118 || dept_code == 120 || dept_code == 119){
+    else if (dept_code === 114 || dept_code === 115|| dept_code === 116 || dept_code === 118 || dept_code === 120 || dept_code === 119){
         category = "Health & Hygiene";
-        dept = category;
         dept = <Health/>;
 
     }

@@ -8,21 +8,22 @@ function Tab({ name, price, desc, itemNo, img, setDisplay, index }) {
 
     const [numItem, setNumItem] = useState({
         value: m[index].COUNT
-    })
+    });
+
     const [priceItem, setPriceItem] = useState({
         price: prices
-    })
-
-
+    });
 
     const increment = (e) => {
+        
         setNumItem({
             value: numItem.value + 1
         })
+
         setPriceItem({
             price: priceItem.price + m[index].ORIGINAL_PRICE
         })
-        // updating the count and the price 
+        
         m[index].PRICE = priceItem.price + m[index].ORIGINAL_PRICE
         m[index].COUNT = numItem.value + 1
         var mString = JSON.stringify(m)
@@ -38,7 +39,7 @@ function Tab({ name, price, desc, itemNo, img, setDisplay, index }) {
             setPriceItem({
                 price: priceItem.price - m[index].ORIGINAL_PRICE
             })
-            // updating the count and the price 
+            
             m[index].PRICE = priceItem.price - m[index].ORIGINAL_PRICE
             m[index].COUNT = numItem.value - 1
             var mString = JSON.stringify(m)
