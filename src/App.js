@@ -11,9 +11,8 @@ import ViewMore from './components/ViewMore/viewMore';
 import SubDepartments from './components/ViewMore/subDepartments';
 import SearchResults from './components/Deshboard/searchResults';
 
-import { BrowserRouter as Router, Switch, Route, withRouter} from "react-router-dom";
-
-
+import { HashRouter as Router, Switch, Route, withRouter} from "react-router-dom";
+//BrowserRouter
 
 function App() {
   return (
