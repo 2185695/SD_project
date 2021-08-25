@@ -6,23 +6,6 @@ import Tab from './Tab';
 import Empty from './Empty';
 import axios from 'axios';
 
-function Address(email){
-
-    const [items, setItems] = useState([{}])
-
-    useEffect(()=>
-    {
-    const getItems= async () =>{
-        await axios.post("https://lamp.ms.wits.ac.za/home/s2172765/getAddress.php", {ID: email})
-        .then(response => setItems(response.data))
-        .catch(error => console.log(error))
-    }
-    getItems();
-    console.log(items)
-    localStorage.setItem("Address", JSON.stringify(items))
-    },[email, items]);  
-}
-
 function Cart() {
     
     let email;
@@ -33,6 +16,7 @@ function Cart() {
     else{
         email = '';
     }
+
     Address(email);
     
     const CartItems = JSON.parse(localStorage.getItem("CartItems"));
@@ -89,6 +73,23 @@ function Cart() {
         );
     }
 }
+function Address(email){
 
+    const [items, setItems] = useState([])
+
+    useEffect(()=>
+    {
+    const getItems= async () =>{
+        await axios.post("https://lamp.ms.wits.ac.za/home/s2172765/getAddress.php", {ID: email})
+        .then(response => setItems(response.data))
+        .catch(error => console.log(error))
+    }
+    getItems();
+    console.log(items)
+    },[email]);  
+
+    localStorage.setItem("Address", JSON.stringify(items))
+
+}
 
 export default Cart;

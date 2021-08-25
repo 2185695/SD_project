@@ -13,7 +13,7 @@ import Health from "./SubDepartments/health"
 
 function ViewMore(){
     const [items, setItems]= useState([])
-    const dept_code = sessionStorage.getItem('deptCode');
+    var dept_code = sessionStorage.getItem('deptCode');
     useEffect(()=>
     {
     const getItems= async () =>{
@@ -26,29 +26,30 @@ function ViewMore(){
 
     // SET THE CATEGORY TITLE DYNAMICALLY
     var category = "";
-    var dept = <Clothing/>;
+    let dept;
+    dept_code = Number(dept_code)
 
-    if (dept_code == 1){
+    if (dept_code === 1){
         category = "Computer & Electronics";
         dept = <Computers/>;
         
     }
-    else if (dept_code == 3){
+    else if (dept_code === 3){
         category = "Books";
         dept = <Books/>;
 
     }
-    else if (dept_code == 8){
+    else if (dept_code === 8){
         category = "Health & Hygiene";
         dept = category;
         dept = <Health/>;
     }
-    else if (dept_code == 10){
+    else if (dept_code === 10){
         category = "Sports & Training";
         dept = category;
         dept = <Sports/>;
     }
-    else if (dept_code == 6){
+    else if (dept_code === 6){
         category = "Clothing";
         dept = category;
         dept = <Clothing/>;
@@ -61,7 +62,6 @@ function ViewMore(){
             <Nav/>
 
             <div className="body">
-                {/* <DepartmentsBar/> */}
                 {dept}
 
                 <div className="feedCategories">
