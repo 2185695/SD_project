@@ -24,15 +24,15 @@ function App() {
               <LandingPage/>
         </Route>
 
-        <Route path="/LoginForm" exact={true}>
+        <Route path="/components/LoginReg/LoginForm" exact={true}>
               <LoginForm />
         </Route>
 
-        <Route path="/Register" exact={true}>
+        <Route path="/components/LoginReg/Register" exact={true}>
               <Register />
         </Route>
         
-        <Route path="/LandingPage" exact={true}>
+        <Route path="/components/Deshboard/LandingPage" exact={true}>
               <LandingPage />
         </Route>
     
