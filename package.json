@@ -30,7 +30,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b sorry -d build",
+    "deploy": "gh-pages -b deploy_test -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
