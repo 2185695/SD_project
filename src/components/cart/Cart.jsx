@@ -6,21 +6,21 @@ import Tab from './Tab';
 import Empty from './Empty';
 import axios from 'axios';
 
-function Address(email){
-
-    const [items, setItems] = useState([{}])
-
+function GetAddress(email){
+    const [items, setItems]= useState([])
+    
     useEffect(()=>
     {
     const getItems= async () =>{
         await axios.post("https://lamp.ms.wits.ac.za/home/s2172765/getAddress.php", {ID: email})
         .then(response => setItems(response.data))
         .catch(error => console.log(error))
-    }
-    getItems();
-    console.log(items)
+    };
+    getItems()
+    
+    },[email])
+
     localStorage.setItem("Address", JSON.stringify(items))
-    },[email, items]);  
 }
 
 function Cart() {
@@ -33,7 +33,7 @@ function Cart() {
     else{
         email = '';
     }
-    Address(email);
+    GetAddress(email);
     
     const CartItems = JSON.parse(localStorage.getItem("CartItems"));
     
