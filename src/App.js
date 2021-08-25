@@ -18,7 +18,7 @@ import { BrowserRouter as Router, Switch, Route, withRouter} from "react-router-
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Switch>
         <Route path="/" exact={true}>
               <LandingPage/>
