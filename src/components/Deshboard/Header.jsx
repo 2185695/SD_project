@@ -3,11 +3,14 @@ import DropdownBtn from "./dropdownBtn";
 import Example from "./regNavBar";
 import Search from "./search";
 import { Favorites, Cart } from "./favCart";
+import { Link } from "react-router-dom";
 
 function Header() {
     return (
         <div className="parent">
-            <a href="LandingPage"><div className="logo"><img src="./images/LOGO.png" alt="App Logo" /></div></a>
+            <Link to='/LandingPage'>
+                <div className="logo"><img src="./images/LOGO.png" alt="App Logo" /></div>
+            </Link>
 
             <div className="dropSearch">
                 <DropdownBtn />

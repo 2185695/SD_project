@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link } from 'react-router-dom';
 
 function CatNavBar(){
   const allBooks = () =>{
@@ -23,25 +24,25 @@ const allHygiene = () =>{
   return (
    
       <div className="catDiv">
-        <a href='/viewMore' onClick={allBooks}><div className="">
+        <Link to='/viewMore' onClick={allBooks}><div className="">
              <span className="catNavBar"><img className="icons" src="./icons/book.svg" alt="book" />Books</span> 
-        </div></a>
+        </div></Link>
 
-        <a href='/viewMore' onClick={allClothing}><div className="">
+        <Link to='/viewMore' onClick={allClothing}><div className="">
              <span className="catNavBar"><img className="icons" src="./icons/tshirt.svg" alt="clot" /> Clothing</span>  
-        </div></a>
+        </div></Link>
 
-        <a href='/viewMore' onClick={allElectro}><div className="">
+        <Link to='/viewMore' onClick={allElectro}><div className="">
              <span className="catNavBar"><img className="icons" src="./icons/technology.svg" alt="tech" />Electronics</span> 
-        </div></a>
+        </div></Link>
 
-        <a href='/viewMore' onClick={allHygiene}><div className="">
+        <Link to='/viewMore' onClick={allHygiene}><div className="">
            <span className="catNavBar"><img className="icons" src="./icons/shampoo.png" alt="health" />Health & Hygiene</span>     
-        </div></a>
+        </div></Link>
 
-        <a href='/viewMore' onClick={allSports}><div className="">
+        <Link to='/viewMore' onClick={allSports}><div className="">
           <span className="catNavBar"><img className="icons" src="./icons/sports.svg" alt="sport" />Sport & Training</span> 
-        </div></a>
+        </div></Link>
         
       </div>
 

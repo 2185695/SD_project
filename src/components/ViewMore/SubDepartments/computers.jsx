@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 function Computers() {
 
@@ -20,18 +21,18 @@ function Computers() {
                         
                         <li><h3 className="viewMore_department">Computer & Electronics</h3>
                             <ul className="viewMore_subDept">
-                                <li><a href="/subDepartments" onClick={Laptops}>Laptops</a></li>
-                                <li><a href="/subDepartments" onClick={Phones}>Phones</a></li>
-                                <li><a href="/subDepartments" onClick={Monitors}>Monitors</a></li>
-                                <li><a href="#">Desktop</a></li>
-                                <li><a href="#">Computer Components</a></li>
-                                <li><a href="#">Computer Accessories</a></li>
-                                <li><a href="#">Networking</a></li>
-                                <li><a href="#">Software</a></li>
-                                <li><a href="#">Storage Devices</a></li>
-                                <li><a href="#">Photography</a></li>
-                                <li><a href="#">Action Cams & Drones</a></li>
-                                <li><a href="#">Vlogging</a></li>
+                                <li><Link to="/subDepartments" onClick={Laptops}>Laptops</Link></li>
+                                <li><Link to="/subDepartments" onClick={Phones}>Phones</Link></li>
+                                <li><Link to="/subDepartments" onClick={Monitors}>Monitors</Link></li>
+                                <li><Link to="/">Desktop</Link></li>
+                                <li><Link to="/">Computer Components</Link></li>
+                                <li><Link to="/">Computer Accessories</Link></li>
+                                <li><Link to="/">Networking</Link></li>
+                                <li><Link to="/">Software</Link></li>
+                                <li><Link to="/">Storage Devices</Link></li>
+                                <li><Link to="/">Photography</Link></li>
+                                <li><Link to="/">Action Cams & Drones</Link></li>
+                                <li><Link to="/">Vlogging</Link></li>
                             </ul>
                         </li>
                     </ul>

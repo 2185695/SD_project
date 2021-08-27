@@ -1,5 +1,5 @@
-import React, { Component, useState } from 'react';
-import { Collapse, Navbar, NavbarToggler, Nav, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import React from 'react';
+import { Link } from "react-router-dom";
 
 
 function Sports() {
@@ -31,19 +31,19 @@ function Sports() {
                         
                         <li><h3 className="viewMore_department">Sports & Training</h3>
                             <ul className="viewMore_subDept">
-                                <li><a href="/subDepartments" onClick={Cycling}>Cycling</a></li>
-                                <li><a href="/subDepartments" onClick={Gym}>Gym Equipment</a></li>
-                                <li><a href="/subDepartments" onClick={SportsEquipment}>Sports Equipment</a></li>
-                                <li><a href="/subDepartments" onClick={SportsNutrition}>Sports Nutrition</a></li>
-                                <li><a href="/subDepartments" onClick={SportsClothing}>Sports Clothing</a></li>
-                                <li><a href="/subDepartments" onClick={Yoga}>Yoga</a></li>
-                                <li><a href="#">Individual Sports</a></li>
-                                <li><a href="#">Running</a></li>
-                                <li><a href="#">Team Sports</a></li>
-                                <li><a href="#">Watersports</a></li>
-                                <li><a href="#">Recovery</a></li> 
-                                <li><a href="#">Sport Wearable Tech</a></li>
-                                <li><a href="#">Sports Footwear</a></li>
+                                <li><Link to="/subDepartments" onClick={Cycling}>Cycling</Link></li>
+                                <li><Link to="/subDepartments" onClick={Gym}>Gym Equipment</Link></li>
+                                <li><Link to="/subDepartments" onClick={SportsEquipment}>Sports Equipment</Link></li>
+                                <li><Link to="/subDepartments" onClick={SportsNutrition}>Sports Nutrition</Link></li>
+                                <li><Link to="/subDepartments" onClick={SportsClothing}>Sports Clothing</Link></li>
+                                <li><Link to="/subDepartments" onClick={Yoga}>Yoga</Link></li>
+                                <li><Link to="/">Individual Sports</Link></li>
+                                <li><Link to="/">Running</Link></li>
+                                <li><Link to="/">Team Sports</Link></li>
+                                <li><Link to="/">Watersports</Link></li>
+                                <li><Link to="/">Recovery</Link></li> 
+                                <li><Link to="/">Sport Wearable Tech</Link></li>
+                                <li><Link to="/">Sports Footwear</Link></li>
                             </ul>
                         </li>
                     </ul>

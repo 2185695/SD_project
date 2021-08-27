@@ -1,6 +1,5 @@
-import React, { Component, useState } from 'react';
-import { Collapse, Navbar, NavbarToggler, Nav, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-
+import React from 'react';
+import { Link } from "react-router-dom";
 
 function Health() {
 
@@ -32,13 +31,13 @@ function Health() {
                         
                         <li><h3 className="viewMore_department">Health & Hygiene</h3>
                             <ul className="viewMore_subDept">
-                                <li><a href="/subDepartments" onClick={Toiletries}>Toiletries</a></li>
-                                <li><a href="/subDepartments" onClick={Sanitize}>Sanitize & First Aid</a></li>
-                                <li><a href="/subDepartments" onClick={Bathroom}>Bathroom</a></li>
-                                <li><a href="/subDepartments" onClick={Dental}>Dental Hygiene</a></li>
-                                <li><a href="/subDepartments" onClick={BodyHygiene}>Body Hygiene</a></li>
-                                <li><a href="/subDepartments" onClick={Shaving}>Shaving/Grooming</a></li>
-                                <li><a href="#">Health Care</a></li>
+                                <li><Link to="/subDepartments" onClick={Toiletries}>Toiletries</Link></li>
+                                <li><Link to="/subDepartments" onClick={Sanitize}>Sanitize & First Aid</Link></li>
+                                <li><Link to="/subDepartments" onClick={Bathroom}>Bathroom</Link></li>
+                                <li><Link to="/subDepartments" onClick={Dental}>Dental Hygiene</Link></li>
+                                <li><Link to="/subDepartments" onClick={BodyHygiene}>Body Hygiene</Link></li>
+                                <li><Link to="/subDepartments" onClick={Shaving}>Shaving/Grooming</Link></li>
+                                <li><Link to="/">Health Care</Link></li>
                             </ul>
                         </li>
                     </ul>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Row } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 const Example = (props) => {
@@ -27,11 +27,15 @@ const Example = (props) => {
               <div>
                 <Row>
                   <NavItem>
-                    <NavLink href="/LoginForm"><span className="regNavBar">Login</span></NavLink>
+                    <NavLink>
+                    <Link to="/LoginForm" style={{textDecoration: 'none'}}><span className="regNavBar">Login</span></Link>
+                    </NavLink>
                   </NavItem>
 
                   <NavItem>
-                    <NavLink href="/Register"><span className="regNavBar">Register</span></NavLink>
+                    <NavLink>
+                    <Link to="/Register" style={{textDecoration: 'none'}}><span className="regNavBar">Register</span></Link>
+                    </NavLink>
                   </NavItem>
                 </Row>
               </div>
@@ -41,13 +45,13 @@ const Example = (props) => {
               <div>
                 <Row>
                   <NavItem>
-                    <NavLink >
+                    <NavLink>
                       <span className="regNavBar">
                       {localStorage.getItem("userDetails") !== null ? (
                     <div className="regNavBar">
 
-                        
 
+                            
                         {"Hi, " + JSON.parse(localStorage.getItem("userDetails")).data[0].firstname + " " + JSON.parse(localStorage.getItem("userDetails")).data[0].lastname}
                     </div>
 
@@ -57,7 +61,9 @@ const Example = (props) => {
                   </NavItem>
 
                   <NavItem>
-                    <NavLink href="/OrderHistory"><span className="regNavBar">Orders</span></NavLink>
+                    <NavLink>
+                    <Link to="/OrderHistory" style={{textDecoration: 'none'}}><span className="regNavBar">Orders</span></Link>
+                    </NavLink>
                   </NavItem>
 
                   <UncontrolledDropdown nav inNavbar>
@@ -90,7 +96,9 @@ const Example = (props) => {
 
                         <DropdownItem>
                           <NavItem>
-                            <NavLink href="/LoginForm"><span style={{ marginLeft: '-5px' }} onClick={handleSubmit}>Log out</span></NavLink>
+                            <NavLink>
+                            <Link to="/LoginForm" style={{textDecoration: 'none'}}><span style={{ marginLeft: '-5px' }} onClick={handleSubmit}>Log out</span></Link>
+                            </NavLink>
                           </NavItem>
                         </DropdownItem>
 

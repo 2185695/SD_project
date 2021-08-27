@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 
 function Search(){
     const [State, setState]= useState('')
@@ -14,10 +15,11 @@ function Search(){
     <div>
         <div className="search">
             <div className="input">
-                <input type = "text" placeholder = "Search...." value = {State.SearchValue} id="myInput" /></div>
-                
-                <a data-testid="btn" href="/searchResults" onClick={stateSetter}><button><img className="icons" src="./icons/search.png" alt="search" /></button ></a>
-
+                <input type="text" placeholder="Search...." value={State.SearchValue} id="myInput" />
+            </div>
+            <Link data-testid="btn" to="/searchResults" >
+                <button onClick={stateSetter}><img className="icons" src="./icons/search.png" alt="search" /></button >
+            </Link>
         </div>
     </div>
     );

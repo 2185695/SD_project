@@ -1,18 +1,23 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 function Favorites(){
     return(
-        <a href="#" ><div className="fav">
-            <img className="favIcon" src="./icons/heart.svg" alt="heart"/>
-        </div></a>
+        <Link to="/" >
+            <div className="fav">
+                <img className="favIcon" src="./icons/heart.svg" alt="heart"/>
+            </div>
+        </Link>
     );
 }
 
 function Cart(){
     return(
-        <a href="/Cart" ><div className="cart">
-            <img className="favIcon" src="./icons/cart2.svg" alt="cart" />
-        </div></a>
+        <Link to="/Cart" >
+            <div className="cart">
+                <img className="favIcon" src="./icons/cart2.svg" alt="cart" />
+            </div>
+        </Link>
     );
 }
 

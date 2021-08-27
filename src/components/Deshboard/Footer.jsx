@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link } from 'react-router-dom';
 
 
 class Footer extends Component{
@@ -8,39 +9,39 @@ class Footer extends Component{
 
                     <div className="footer-item">
                             <h3>Shop</h3>
-                            <p><a href="#">Daily Deals</a></p>
-                            <p><a href="#">Gift Vouchers</a></p>
+                            <p><Link to="/">Daily Deals</Link></p>
+                            <p><Link to="/">Gift Vouchers</Link></p>
                     <img src="./images/LOGO.png" alt="Logo"/>
 
                         </div>
 
                         <div className="footer-item">
                             <h3>Help</h3>
-                            <p><a href="#">Help</a></p>
-                            <p><a href="#">Contact Us</a></p>
-                            <p><a href="#">Submit an Idea</a></p>
-                            <p><a href="#">Suggest a Product</a></p>
-                            <p><a href="#">Shipping & Delivery</a></p>
-                            <p><a href="#">Exchanges & Returns</a></p>
+                            <p><Link to="/">Help</Link></p>
+                            <p><Link to="/">Contact Us</Link></p>
+                            <p><Link to="/">Submit an Idea</Link></p>
+                            <p><Link to="/">Suggest a Product</Link></p>
+                            <p><Link to="/">Shipping & Delivery</Link></p>
+                            <p><Link to="/">Exchanges & Returns</Link></p>
                         </div>
 
                         <div className="footer-item">
                             <h3>Account</h3>
-                            <p><a href="#">My Account</a></p>
-                            <p><a href="#">Track Order</a></p>
-                            <p><a href="#">Exchanges & Returns</a></p>
-                            <p><a href="#">Invoices</a></p>
+                            <p><Link to="/">My Account</Link></p>
+                            <p><Link to="/">Track Order</Link></p>
+                            <p><Link to="/">Exchanges & Returns</Link></p>
+                            <p><Link to="/">Invoices</Link></p>
                         </div>
                         <div className="footer-item">
                             <h3>Company</h3>
-                            <p><a href="#">About Us</a></p>  
-                            <p><a href="#">Careers</a></p>
-                            <p><a href="#">Sell on Wits Marketplace</a></p>
-                            <p><a href="#">Deliver for Wits Marketplace</a></p>
-                            <p><a href="#">Press & News</a></p>
-                            <p><a href="#">Competitions</a></p>
-                            <p><a href="#">Terms & Conditions</a></p>
-                            <p><a href="#">Privacy Policy</a></p>
+                            <p><Link to="/">About Us</Link></p>  
+                            <p><Link to="/">Careers</Link></p>
+                            <p><Link to="/">Sell on Wits Marketplace</Link></p>
+                            <p><Link to="/">Deliver for Wits Marketplace</Link></p>
+                            <p><Link to="/">Press & News</Link></p>
+                            <p><Link to="/">Competitions</Link></p>
+                            <p><Link to="/">Terms & Conditions</Link></p>
+                            <p><Link to="/">Privacy Policy</Link></p>
                         </div>
                 </div>;
                 <div className="copyright">

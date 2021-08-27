@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import jsPDF from 'jspdf';
 import html2canvas from "html2canvas";
+import { Link } from 'react-router-dom';
 
 class MyAccountBar extends Component{
     
@@ -10,10 +11,10 @@ class MyAccountBar extends Component{
                     
                     <ul className="departmentItems">
                         
-                        <li><a href="#" className="department">Orders</a>
+                        <li><Link style={{textDecoration: 'none'}} className="department">Orders</Link>
                             <ul id="booksStationery" className="subDepartment">
-                                <li><a href="#orders">Orders</a></li>
-                                <li><a href="#orders" onClick={()=>{
+                                <li><Link to="/Cart">Orders</Link></li>
+                                <li><Link onClick={()=>{
                                     const input = document.getElementById("invoice");
                                     html2canvas(input)
                                         .then((canvas) => {
@@ -26,23 +27,23 @@ class MyAccountBar extends Component{
                                         }
                                         )
 
-                                }}>Invoices</a></li>
+                                }}>Invoices</Link></li>
                                
                             </ul>
                         </li>
                         
-                        <li><a href="#" className="department">Payments & Credit</a>
+                        <li><Link style={{textDecoration: 'none'}} className="department">Payments & Credit</Link>
                             <ul id="clothing-bags" className="subDepartment">
-                                <li><a href="#">Credit & Refunds</a></li>
-                                <li><a href="#">Redeem Gift Vouchers</a></li>
+                                <li><Link to="/">Credit & Refunds</Link></li>
+                                <li><Link to="/">Redeem Gift Vouchers</Link></li>
                             </ul>
                         </li>
                         
-                        <li><a href="#" className="department">Customer Information</a>
+                        <li><Link style={{textDecoration: 'none'}} className="department">Customer Information</Link>
                             <ul id="computerElectronics" className="subDepartment">
-                                <li><a href="#">Personal Details</a></li>
-                                <li><a href="#">Address Book</a></li>
-                                <li><a href="#">Newsletter Subscription</a></li>
+                                <li><Link to="/">Personal Details</Link></li>
+                                <li><Link to="/">Address Book</Link></li>
+                                <li><Link to="/">Newsletter Subscription</Link></li>
                             </ul>
                         </li>
                     </ul>

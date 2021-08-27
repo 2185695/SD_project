@@ -1,11 +1,8 @@
 
 import React,{useState} from 'react';
+import { Link } from "react-router-dom";
 
 function Books() {
-
-    // sessionStorage.clear();
-    // const [deptCode, setDeptCode] = useState(null)
-    // sessionStorage.setItem('SubdeptCode', deptCode)
 
     // these are the functions for individual links, the codes im passing are just random because i dont know them
     const allBooks = () =>{
@@ -43,15 +40,15 @@ function Books() {
                         <li><h3 className="viewMore_department">Books</h3>
                             <ul className="viewMore_subDept">
 
-                                <li><a href="/viewMore" onClick={allBooks}>All Books</a></li>
+                                <li><Link to="/viewMore" onClick={allBooks}>All Books</Link></li>
 
-                                <li><a href="/subDepartments" onClick={Fiction}>Fiction</a></li>
-                                <li><a href="/subDepartments" onClick={NonFiction}>Non Fiction</a></li>
-                                <li><a href="#" >Inspired Reading</a></li>
-                                <li><a href="#" >Children's Books</a></li>
-                                <li><a href="#" >Christian Living</a></li>
-                                <li><a href="#" >Cookbooks</a></li>
-                                <li><a href="#" >Bestsellers</a></li>
+                                <li><Link to="/subDepartments" onClick={Fiction}>Fiction</Link></li>
+                                <li><Link to="/subDepartments" onClick={NonFiction}>Non Fiction</Link></li>
+                                <li><Link to="/" >Inspired Reading</Link></li>
+                                <li><Link to="/" >Children's Books</Link></li>
+                                <li><Link to="/" >Christian Living</Link></li>
+                                <li><Link to="/" >Cookbooks</Link></li>
+                                <li><Link to="/" >Bestsellers</Link></li>
                             </ul>
                         </li>
                     </ul>

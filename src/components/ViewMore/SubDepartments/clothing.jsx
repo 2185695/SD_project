@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 function Clothing() {
 
@@ -33,14 +34,14 @@ function Clothing() {
                         
                         <li><h3 className="viewMore_department">Clothing</h3>
                             <ul className="viewMore_subDept">
-                                <li><a href="/viewMore" onClick={allFashion}>All Fashion</a></li>
-                                <li><a href="/subDepartments" onClick={Men}>Men</a></li>
-                                <li><a href="/subDepartments" onClick={Women}>Women</a></li>
-                                <li><a href="/subDepartments" onClick={Kids}>Kids</a></li>
-                                <li><a href="/subDepartments" onClick={Watches}>Watches</a></li>
-                                <li><a href="/subDepartments" onClick={Eyewear}>Eyewear</a></li>
-                                <li><a href="/subDepartments" onClick={Footwear}>Footwear</a></li>
-                                <li><a href="#">Head gear</a></li>
+                                <li><Link to="/viewMore" onClick={allFashion}>All Fashion</Link></li>
+                                <li><Link to="/subDepartments" onClick={Men}>Men</Link></li>
+                                <li><Link to="/subDepartments" onClick={Women}>Women</Link></li>
+                                <li><Link to="/subDepartments" onClick={Kids}>Kids</Link></li>
+                                <li><Link to="/subDepartments" onClick={Watches}>Watches</Link></li>
+                                <li><Link to="/subDepartments" onClick={Eyewear}>Eyewear</Link></li>
+                                <li><Link to="/subDepartments" onClick={Footwear}>Footwear</Link></li>
+                                <li><Link to="/">Head gear</Link></li>
                             </ul>
                         </li>
                     </ul>
