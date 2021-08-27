@@ -11,8 +11,9 @@ import ViewMore from './components/ViewMore/viewMore';
 import SubDepartments from './components/ViewMore/subDepartments';
 import SearchResults from './components/Deshboard/searchResults';
 
-import { HashRouter as Router, Switch, Route, withRouter} from "react-router-dom";
-//BrowserRouter
+import { BrowserRouter as Router, Switch, Route, withRouter} from "react-router-dom";
+//HashRouter  '/home/s1671848/SD_Project/#'
+//"homepage": "https://lamp.ms.wits.ac.za/home/s1671848/SD_Project/",
 
 function App() {
   return (
@@ -23,15 +24,15 @@ function App() {
               <LandingPage/>
         </Route>
 
-        <Route path="/components/LoginReg/LoginForm" exact={true}>
+        <Route path="/LoginForm" exact={true}>
               <LoginForm />
         </Route>
 
-        <Route path="/components/LoginReg/Register" exact={true}>
+        <Route path="/Register" exact={true}>
               <Register />
         </Route>
         
-        <Route path="/components/Deshboard/LandingPage" exact={true}>
+        <Route path="/LandingPage" exact={true}>
               <LandingPage />
         </Route>
     

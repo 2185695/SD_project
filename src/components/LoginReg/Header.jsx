@@ -11,9 +11,9 @@ function Header({pageUrl, title }) {
                     <div className="d-flex align-items-center" >
                         <Image src='./img/trans_logo.png' style={{ marginLeft: '50px', marginTop: '5px', width: '50px' }} />
                     </div>
-                    <p style={{ marginLeft: '3%', marginTop: '30px', fontSize: '16px' }}>
+                    <p style={{ marginLeft: '3%', marginTop: '20px', fontSize: '16px' }}>
                         We have everything that you need and like. Clothing | Technology | Books | Accessories | Sports | Stationary</p>
-                    <p style={{ marginLeft: '15%', marginTop: '30px' }}>
+                    <p style={{ marginLeft: '10%', marginTop: '20px' }}>
                         <Link to = {pageUrl}>{title}</Link>
                     </p>
                 </Row>

@@ -1,6 +1,5 @@
 {
   "name": "my-app",
-  "homepage": "https://legend-45.github.io/SD_project/",
   "version": "0.1.0",
   "private": true, 
   "dependencies": {
@@ -29,8 +28,6 @@
     "yup": "^0.32.9"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
