@@ -23,7 +23,7 @@ function OrderBody(){
         const user = JSON.parse(localStorage.getItem('userDetails'));
         const User = user['data'][0]['firstname'] + ' ' + user['data'][0]['lastname'];
         const [items, setItems]= useState([])
-        
+         
         useEffect(()=>
         {
         const getItems= async () => {

@@ -162,30 +162,38 @@ class Suggest extends React.Component {
     }
 
     SaveOrder=() =>{
-        var balance = 300000;
+        // var balance = 300000;
+        
         const { street,surburb,city,country, email, order} = this.state;
         var deliveryaddress = {Street: street, Surburb: surburb, City: city, Country: country };
-            axios.post(`https://lamp.ms.wits.ac.za/home/s2172765/insertOrders.php?userEmail=${email}&order=${order}&balance=${balance}&deliveryAddress=${JSON.stringify(deliveryaddress)}`)
-            .then((response) => {
-                if(response.status === 200){
-                    if(response.data === "Successful"){
-                        alert("Your order has been successfully received. Thank you for shopping with us");
-                        localStorage.removeItem('CartItems');
-                        window.open("http://localhost:3000/","_self");
-                    }
-                    else{
-                        alert(response.data + " Please try again later");
-                        window.open("http://localhost:3000/","_self");
-                    }
-                }
-                else{
-                    alert(response.statusText)
-                    window.open("http://localhost:3000/","_self");
-                }
-            }, (error) => {
-                alert(error)
-                console.log(error)
-            }).catch(error => console.log(error));
+        var balance =Number(JSON.parse(localStorage.getItem('userDetails'))['data'][0]['balance']);
+        
+        if(Number(this.state.totalPrice) <= balance){
+          balance = balance - this.state.totalPrice;
+          axios.post(`https://lamp.ms.wits.ac.za/home/s2172765/insertOrders.php?userEmail=${email}&order=${order}&balance=${balance}&deliveryAddress=${JSON.stringify(deliveryaddress)}`)
+              .then((response) => {
+                  if(response.status === 200){
+                      if(response.data === "Successful"){
+                          alert("Your order has been successfully received. Thank you for shopping with us");
+                          localStorage.removeItem('CartItems');
+                          window.open("http://localhost:3000/","_self");
+                      }
+                      else{
+                          alert(response.data + " Please try again later");
+                          window.open("http://localhost:3000/","_self");
+                      }
+                  }
+                  else{
+                      alert(response.statusText)
+                      window.open("http://localhost:3000/","_self");
+                  }
+              }, (error) => {
+                  alert(error)
+                  console.log(error)
+              }).catch(error => console.log(error));
+        }else{
+          alert("You have insufficient funds to make this purchase");
+        }
     };
 
     onChangeStreet = (event, { newValue, method }) => {
