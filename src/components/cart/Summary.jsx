@@ -163,7 +163,8 @@ class Suggest extends React.Component {
     }
 
     SaveOrder=() =>{
-        var balance = 300000;
+        // var balance = 300000;
+        
         const { street,surburb,city,country, email, order} = this.state;
         var deliveryaddress = {Street: street, Surburb: surburb, City: city, Country: country };
             axios.post(`https://lamp.ms.wits.ac.za/home/s2172765/insertOrders.php?userEmail=${email}&order=${order}&balance=${balance}&deliveryAddress=${JSON.stringify(deliveryaddress)}`)

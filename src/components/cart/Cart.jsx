@@ -6,6 +6,10 @@ import Tab from './Tab';
 import Empty from './Empty';
 import axios from 'axios';
 
+
+
+
+
 function GetAddress(email){
     const [items, setItems]= useState([])
     
@@ -16,8 +20,8 @@ function GetAddress(email){
         .then(response => setItems(response.data))
         .catch(error => console.log(error))
     };
-    getItems()
     
+    getItems()
     },[email])
 
     localStorage.setItem("Address", JSON.stringify(items))
@@ -81,7 +85,7 @@ function Cart() {
                                 ))}
 
                             </div>
-                            <Suggest />
+                            
                         </Row>
                     </div>
                 </div>
