@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App'; 
-import { BrowserRouter as Router } from 'react-router-dom';
-//'/home/s1671848/SD_Project/#' HashRouter
+import { HashRouter as Router } from 'react-router-dom';
 
 ReactDOM.render( 
   <React.StrictMode>

@@ -1,43 +1,39 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function Computers() {
+    const history = useHistory();
 
-    const Laptops = () =>{
-        sessionStorage.setItem('SubdeptCode', 100)
-    }
-    const Phones = () =>{
-        sessionStorage.setItem('SubdeptCode', 112)
-    }
-    const Monitors = () =>{
-        sessionStorage.setItem('SubdeptCode', 121)
+    function navToPage(num) {
+      history.push({
+        pathname: "/subDepartments",
+        state: {Number: num}
+      });
     }
 
     return (
         <div className="viewMore_departments2">
             <h3 className="departmentHeading">Departments</h3>
-
-                    <ul className="departmentItems">
-                        
-                        <li><h3 className="viewMore_department">Computer & Electronics</h3>
-                            <ul className="viewMore_subDept">
-                                <li><Link to="/subDepartments" onClick={Laptops}>Laptops</Link></li>
-                                <li><Link to="/subDepartments" onClick={Phones}>Phones</Link></li>
-                                <li><Link to="/subDepartments" onClick={Monitors}>Monitors</Link></li>
-                                <li><Link to="/">Desktop</Link></li>
-                                <li><Link to="/">Computer Components</Link></li>
-                                <li><Link to="/">Computer Accessories</Link></li>
-                                <li><Link to="/">Networking</Link></li>
-                                <li><Link to="/">Software</Link></li>
-                                <li><Link to="/">Storage Devices</Link></li>
-                                <li><Link to="/">Photography</Link></li>
-                                <li><Link to="/">Action Cams & Drones</Link></li>
-                                <li><Link to="/">Vlogging</Link></li>
-                            </ul>
-                        </li>
+            <ul className="departmentItems">                        
+                <li><h3 className="viewMore_department">Computer & Electronics</h3>
+                    <ul className="viewMore_subDept">
+                        <li onClick={()=> navToPage(100)} style={{cursor: 'pointer'}}>Laptops</li>
+                        <li onClick={()=> navToPage(112)} style={{cursor: 'pointer'}}>Phones</li>
+                        <li onClick={()=> navToPage(121)} style={{cursor: 'pointer'}}>Monitors</li>
+                        <li style={{cursor: 'pointer'}}>Desktop</li>
+                        <li style={{cursor: 'pointer'}}>Computer Components</li>
+                        <li style={{cursor: 'pointer'}}>Computer Accessories</li>
+                        <li style={{cursor: 'pointer'}}>Networking</li>
+                        <li style={{cursor: 'pointer'}}>Software</li>
+                        <li style={{cursor: 'pointer'}}>Storage Devices</li>
+                        <li style={{cursor: 'pointer'}}>Photography</li>
+                        <li style={{cursor: 'pointer'}}>Action Cams & Drones</li>
+                        <li style={{cursor: 'pointer'}}>Vlogging</li>
                     </ul>
-
-        </div> );
+                </li>
+            </ul>
+        </div>
+    );
 }
 
 export default Computers;

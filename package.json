@@ -1,5 +1,6 @@
 {
   "name": "my-app",
+  "homepage": "https://lamp.ms.wits.ac.za/home/s1671848/SD_Project/",
   "version": "0.1.0",
   "private": true, 
   "dependencies": {

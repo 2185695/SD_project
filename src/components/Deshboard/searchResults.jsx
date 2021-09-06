@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import Header from './Header';
 import Footer from "./Footer";
@@ -7,23 +8,25 @@ import ItemBox from "./itemBox";
 
 
 function Search(){
-    const [items, setItems]= useState([])
-    const state = sessionStorage.getItem('state');
+    const location = useLocation();
+    const [items, setItems]= useState([]);
+    const [state, setState]= useState([]);
+
     useEffect(()=>
     {
-    const getItems= async () =>{
-        await axios.post("https://lamp.ms.wits.ac.za/home/s2172765/searchProducts.php", {ID: state})
-        .then(response => setItems(response.data))
-        .catch(error => console.log(error))
-    };
-    getItems()
-    },[state])
+        setState(location.state.State);
+        const getItems= async () =>{
+            await axios.post("https://lamp.ms.wits.ac.za/home/s2172765/searchProducts.php", {ID: location.state.State})
+            .then(response => setItems(response.data))
+            .catch(error => console.log(error))
+        };
+        getItems();
+    },[location.state.State]);
 
     return (
     <div>
         <Header />
         <Nav />
-
         <div>
             <h1>Search Results for  "{state}": </h1>
         </div>

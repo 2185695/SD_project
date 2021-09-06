@@ -97,7 +97,7 @@ const Example = (props) => {
                         <DropdownItem>
                           <NavItem>
                             <NavLink>
-                            <Link to="/LoginForm" style={{textDecoration: 'none'}}><span style={{ marginLeft: '-5px' }} onClick={handleSubmit}>Log out</span></Link>
+                                <span style={{ marginLeft: '-5px' }} onClick={handleSubmit}>Log out</span>
                             </NavLink>
                           </NavItem>
                         </DropdownItem>

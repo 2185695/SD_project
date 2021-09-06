@@ -1,52 +1,42 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function Clothing() {
+    const history = useHistory();
 
-    const allFashion = () =>{
-        sessionStorage.setItem('deptCode', 6)
+    function navToPage(num) {
+      history.push({
+        pathname: "/subDepartments",
+        state: {Number: num}
+      });
     }
-    
-    const Men = () =>{
-        sessionStorage.setItem('SubdeptCode', 109)
-    }
-    const Women = () =>{
-        sessionStorage.setItem('SubdeptCode', 111)
-    }
-    const Kids = () =>{
-        sessionStorage.setItem('SubdeptCode', 110)
-    }
-    const Eyewear = () =>{
-        sessionStorage.setItem('SubdeptCode', 129)
-    }
-    const Watches = () =>{
-        sessionStorage.setItem('SubdeptCode', 128)
-    }
-    const Footwear = () =>{
-        sessionStorage.setItem('SubdeptCode', 131)
+
+    function navToViewMore(num) {
+      history.push({
+        pathname: "/viewMore",
+        state: {Number: num}
+      });
     }
 
     return (
         <div className="viewMore_departments">
             <h3 className="departmentHeading">Departments</h3>
-
-                    <ul className="departmentItems">
-                        
-                        <li><h3 className="viewMore_department">Clothing</h3>
-                            <ul className="viewMore_subDept">
-                                <li><Link to="/viewMore" onClick={allFashion}>All Fashion</Link></li>
-                                <li><Link to="/subDepartments" onClick={Men}>Men</Link></li>
-                                <li><Link to="/subDepartments" onClick={Women}>Women</Link></li>
-                                <li><Link to="/subDepartments" onClick={Kids}>Kids</Link></li>
-                                <li><Link to="/subDepartments" onClick={Watches}>Watches</Link></li>
-                                <li><Link to="/subDepartments" onClick={Eyewear}>Eyewear</Link></li>
-                                <li><Link to="/subDepartments" onClick={Footwear}>Footwear</Link></li>
-                                <li><Link to="/">Head gear</Link></li>
-                            </ul>
-                        </li>
+            <ul className="departmentItems">
+                <li><h3 className="viewMore_department">Clothing</h3>
+                    <ul className="viewMore_subDept">
+                        <li onClick={()=> navToViewMore(6)} style={{cursor: 'pointer'}}>All Fashion</li>
+                        <li onClick={()=> navToPage(109)} style={{cursor: 'pointer'}}>Men</li>
+                        <li onClick={()=> navToPage(111)} style={{cursor: 'pointer'}}>Women</li>
+                        <li onClick={()=> navToPage(110)} style={{cursor: 'pointer'}}>Kids</li>
+                        <li onClick={()=> navToPage(128)} style={{cursor: 'pointer'}}>Watches</li>
+                        <li onClick={()=> navToPage(129)} style={{cursor: 'pointer'}}>Eyewear</li>
+                        <li onClick={()=> navToPage(131)} style={{cursor: 'pointer'}}>Footwear</li>
+                        <li style={{cursor: 'pointer'}}>Head gear</li>
                     </ul>
-
-        </div> );
+                </li>
+            </ul>
+        </div>
+    );
 }
 
 export default Clothing;

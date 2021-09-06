@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Button, Row, Col, Card} from 'react-bootstrap';
 import Modal from 'react-modal';
+// import { useHistory } from 'react-router-dom';
 import Autosuggest from 'react-autosuggest';
 import axios from 'axios';
 
@@ -109,14 +110,14 @@ class Suggest extends React.Component {
         numberOfItems: 0,
         email: '',
         order: [],
-        totalPrice: 0 
+        totalPrice: 0
       };  
 
     }
-
+  
     HandleDiscard=()=>{
       localStorage.setItem("CartItems", null);
-      window.open("http://localhost:3000/","_self");
+      window.open("https://lamp.ms.wits.ac.za/home/s1671848/SD_Project/","_self");
     } 
 
     handleOrder=()=>{
@@ -124,7 +125,7 @@ class Suggest extends React.Component {
         var cartItems = JSON.parse(localStorage.getItem('CartItems'));
         let userInfo = isLoggedIn();
         if(userInfo[0] !== 1){
-            window.open("http://localhost:3000/LoginForm","_self"); 
+            window.open("https://lamp.ms.wits.ac.za/home/s1671848/SD_Project/LoginForm","_self"); 
         }
         else{
           var itemname = "";
@@ -169,18 +170,21 @@ class Suggest extends React.Component {
             .then((response) => {
                 if(response.status === 200){
                     if(response.data === "Successful"){
-                        alert("Your order has been successfully received. Thank you for shopping with us");
-                        localStorage.removeItem('CartItems');
-                        window.open("http://localhost:3000/","_self");
+                      alert("Your order has been successfully received. Thank you for shopping with us");
+                      localStorage.removeItem('CartItems');
+                      window.open('https://lamp.ms.wits.ac.za/home/s1671848/SD_Project/','_self');
+                      // window.open("/LandingPage","_self");
                     }
                     else{
-                        alert(response.data + " Please try again later");
-                        window.open("http://localhost:3000/","_self");
+                      alert(response.data + " Please try again later");
+                      window.open('https://lamp.ms.wits.ac.za/home/s1671848/SD_Project/','_self');
+                      // window.open("/LandingPage","_self");
                     }
                 }
                 else{
-                    alert(response.statusText)
-                    window.open("http://localhost:3000/","_self");
+                  alert(response.statusText);
+                  window.open('https://lamp.ms.wits.ac.za/home/s1671848/SD_Project/','_self');
+                  // window.open("/LandingPage","_self");
                 }
             }, (error) => {
                 alert(error)

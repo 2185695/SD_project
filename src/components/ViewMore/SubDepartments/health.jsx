@@ -1,48 +1,34 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function Health() {
+    const history = useHistory();
 
-    const Toiletries = () =>{
-        sessionStorage.setItem('SubdeptCode', 118)
-    }
-    
-    const Sanitize = () =>{
-        sessionStorage.setItem('SubdeptCode', 114)
-    }
-    const Bathroom = () =>{
-        sessionStorage.setItem('SubdeptCode', 119)
-    }
-    const Dental = () =>{
-        sessionStorage.setItem('SubdeptCode', 120)
-    }
-    const BodyHygiene = () =>{
-        sessionStorage.setItem('SubdeptCode', 116)
-    }
-    const Shaving = () =>{
-        sessionStorage.setItem('SubdeptCode', 115)
+    function navToPage(num) {
+        history.push({
+          pathname: "/subDepartments",
+          state: {Number: num}
+        });
     }
 
     return (
         <div className="viewMore_departments2">
             <h3 className="departmentHeading">Departments</h3>
-
-                    <ul className="departmentItems">
-                        
-                        <li><h3 className="viewMore_department">Health & Hygiene</h3>
-                            <ul className="viewMore_subDept">
-                                <li><Link to="/subDepartments" onClick={Toiletries}>Toiletries</Link></li>
-                                <li><Link to="/subDepartments" onClick={Sanitize}>Sanitize & First Aid</Link></li>
-                                <li><Link to="/subDepartments" onClick={Bathroom}>Bathroom</Link></li>
-                                <li><Link to="/subDepartments" onClick={Dental}>Dental Hygiene</Link></li>
-                                <li><Link to="/subDepartments" onClick={BodyHygiene}>Body Hygiene</Link></li>
-                                <li><Link to="/subDepartments" onClick={Shaving}>Shaving/Grooming</Link></li>
-                                <li><Link to="/">Health Care</Link></li>
-                            </ul>
-                        </li>
+            <ul className="departmentItems">                       
+                <li><h3 className="viewMore_department">Health & Hygiene</h3>
+                    <ul className="viewMore_subDept">
+                        <li onClick={()=> navToPage(118)} style={{cursor: 'pointer'}}>Toiletries</li>
+                        <li onClick={()=> navToPage(114)} style={{cursor: 'pointer'}}>Sanitize & First Aid</li>
+                        <li onClick={()=> navToPage(119)} style={{cursor: 'pointer'}}>Bathroom</li>
+                        <li onClick={()=> navToPage(120)} style={{cursor: 'pointer'}}>Dental Hygiene</li>
+                        <li onClick={()=> navToPage(116)} style={{cursor: 'pointer'}}>Body Hygiene</li>
+                        <li onClick={()=> navToPage(115)} style={{cursor: 'pointer'}}>Shaving/Grooming</li>
+                        <li style={{cursor: 'pointer'}}>Health Care</li>
                     </ul>
-
-        </div> );
+                </li>
+            </ul>
+        </div>
+    );
 }
 
 export default Health;

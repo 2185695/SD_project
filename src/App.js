@@ -9,9 +9,8 @@ import OrderHistory from './components/Deshboard/OrderHistory';
 import ViewMore from './components/ViewMore/viewMore';
 import SubDepartments from './components/ViewMore/subDepartments';
 import SearchResults from './components/Deshboard/searchResults';
+import { HashRouter as Router, Switch, Route, withRouter} from "react-router-dom";
 
-import { BrowserRouter as Router, Switch, Route, withRouter} from "react-router-dom";
-//HashRouter  '/home/s1671848/SD_Project/#'
 //"homepage": "https://lamp.ms.wits.ac.za/home/s1671848/SD_Project/",
 
 function App() {

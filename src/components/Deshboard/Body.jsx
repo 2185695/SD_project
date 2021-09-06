@@ -1,27 +1,25 @@
-import React, {useState} from 'react';
+import React from 'react';
 import DepartmentsBar from "./departmentsBar";
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import {Items, Items2, Items3, Items4, Items5} from "./items";
 
-function departmentCode(num){
-    return num;
-}
-
-function Body(){
-    const [deptCode, setDeptCode]= useState();
-    sessionStorage.setItem('deptCode', deptCode);
-    
+function Body() {
+    const history = useHistory();
+    function navToPage(num) {
+        history.push({
+            pathname: "/viewMore",
+            state: {Number: num}
+        });
+    }
     
     return(
     <div className="body">
         <DepartmentsBar />
-
         <div className="feed">
-            
             <div className="feedCategories">
                 <div className="titlebtn">
                     <h2 id="daily">Books</h2>
-                    <Link to='/viewMore'><button onClick={()=>setDeptCode(3)}>View More</button></Link>
+                    <button onClick={() => navToPage(3)}>View More</button>
                 </div>
 
                 <Items />
@@ -30,7 +28,7 @@ function Body(){
             <div className="feedCategories">
                 <div className="titlebtn">
                     <h2 id="computer">Computer & Electronics</h2>
-                    <Link to='/viewMore'><button onClick={()=>setDeptCode(1)}>View More</button></Link>
+                    <button onClick={() => navToPage(1)}>View More</button>
                 </div>
 
                 <Items2 />
@@ -39,7 +37,7 @@ function Body(){
             <div className="feedCategories">
                 <div className="titlebtn">
                     <h2 id="computer">Clothing</h2>
-                    <Link to='/viewMore'><button onClick={()=>setDeptCode(6)}>View More</button></Link>
+                    <button onClick={() => navToPage(6)}>View More</button>
                 </div>
 
                 <Items3 />
@@ -48,7 +46,7 @@ function Body(){
             <div className="feedCategories">
                 <div className="titlebtn">
                     <h2 id="daily">Hygiene</h2>
-                    <Link to='/viewMore'><button onClick={()=>setDeptCode(8)}>View More</button></Link>
+                    <button onClick={() => navToPage(8)}>View More</button>
                 </div>
 
                 <Items4 />
@@ -57,7 +55,7 @@ function Body(){
             <div className="feedCategories">
                 <div className="titlebtn">
                     <h2 id="computer">Sport & Training</h2>
-                    <Link to='/viewMore'><button onClick={()=>setDeptCode(10)}>View More</button></Link>
+                    <button onClick={() => navToPage(10)}>View More</button>
                 </div>
 
                 <Items5 />
@@ -70,4 +68,5 @@ function Body(){
     );
 }
 
-export {Body, departmentCode};
+export { Body };
+//, departmentCode
