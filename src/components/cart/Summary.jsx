@@ -1,7 +1,6 @@
 import React from 'react';
 import { Form, Button, Row, Col, Card} from 'react-bootstrap';
 import Modal from 'react-modal';
-// import { useHistory } from 'react-router-dom';
 import Autosuggest from 'react-autosuggest';
 import axios from 'axios';
 
@@ -110,14 +109,14 @@ class Suggest extends React.Component {
         numberOfItems: 0,
         email: '',
         order: [],
-        totalPrice: 0
+        totalPrice: 0 
       };  
 
     }
-  
+
     HandleDiscard=()=>{
       localStorage.setItem("CartItems", null);
-      window.open("https://lamp.ms.wits.ac.za/home/s1671848/SD_Project/","_self");
+      window.open("http://localhost:3000/","_self");
     } 
 
     handleOrder=()=>{
@@ -125,7 +124,7 @@ class Suggest extends React.Component {
         var cartItems = JSON.parse(localStorage.getItem('CartItems'));
         let userInfo = isLoggedIn();
         if(userInfo[0] !== 1){
-            window.open("https://lamp.ms.wits.ac.za/home/s1671848/SD_Project/#/LoginForm","_self"); 
+            window.open("http://localhost:3000/LoginForm","_self"); 
         }
         else{
           var itemname = "";
@@ -167,30 +166,34 @@ class Suggest extends React.Component {
         
         const { street,surburb,city,country, email, order} = this.state;
         var deliveryaddress = {Street: street, Surburb: surburb, City: city, Country: country };
-            axios.post(`https://lamp.ms.wits.ac.za/home/s2172765/insertOrders.php?userEmail=${email}&order=${order}&balance=${balance}&deliveryAddress=${JSON.stringify(deliveryaddress)}`)
-            .then((response) => {
-                if(response.status === 200){
-                    if(response.data === "Successful"){
-                      alert("Your order has been successfully received. Thank you for shopping with us");
-                      localStorage.removeItem('CartItems');
-                      window.open('https://lamp.ms.wits.ac.za/home/s1671848/SD_Project/','_self');
-                      // window.open("/LandingPage","_self");
-                    }
-                    else{
-                      alert(response.data + " Please try again later");
-                      window.open('https://lamp.ms.wits.ac.za/home/s1671848/SD_Project/','_self');
-                      // window.open("/LandingPage","_self");
-                    }
-                }
-                else{
-                  alert(response.statusText);
-                  window.open('https://lamp.ms.wits.ac.za/home/s1671848/SD_Project/','_self');
-                  // window.open("/LandingPage","_self");
-                }
-            }, (error) => {
-                alert(error)
-                console.log(error)
-            }).catch(error => console.log(error));
+        var balance =Number(JSON.parse(localStorage.getItem('userDetails'))['data'][0]['balance']);
+        
+        if(Number(this.state.totalPrice) <= balance){
+          balance = balance - this.state.totalPrice;
+          axios.post(`https://lamp.ms.wits.ac.za/home/s2172765/insertOrders.php?userEmail=${email}&order=${order}&balance=${balance}&deliveryAddress=${JSON.stringify(deliveryaddress)}`)
+              .then((response) => {
+                  if(response.status === 200){
+                      if(response.data === "Successful"){
+                          alert("Your order has been successfully received. Thank you for shopping with us");
+                          localStorage.removeItem('CartItems');
+                          window.open("http://localhost:3000/","_self");
+                      }
+                      else{
+                          alert(response.data + " Please try again later");
+                          window.open("http://localhost:3000/","_self");
+                      }
+                  }
+                  else{
+                      alert(response.statusText)
+                      window.open("http://localhost:3000/","_self");
+                  }
+              }, (error) => {
+                  alert(error)
+                  console.log(error)
+              }).catch(error => console.log(error));
+        }else{
+          alert("You have insufficient funds to make this purchase");
+        }
     };
 
     onChangeStreet = (event, { newValue, method }) => {
