@@ -23,7 +23,7 @@ class MyAccountBar extends Component{
                                             pdf.addImage(imgData, 'JPEG', 0, 0);
                                             pdf.save(`wits_marketplace_invoice.pdf`);
                                         }).finally(()=>{
-                                            window.open("http://localhost:3000/OrderHistory","_self");
+                                            window.open("https://lamp.ms.wits.ac.za/home/s1671848/SD_Project/#/OrderHistory","_self");
                                         }
                                         )
 

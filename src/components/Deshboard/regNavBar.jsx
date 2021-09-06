@@ -48,10 +48,7 @@ const Example = (props) => {
                     <NavLink>
                       <span className="regNavBar">
                       {localStorage.getItem("userDetails") !== null ? (
-                    <div className="regNavBar">
-
-
-                            
+                    <div className="regNavBar">                            
                         {"Hi, " + JSON.parse(localStorage.getItem("userDetails")).data[0].firstname + " " + JSON.parse(localStorage.getItem("userDetails")).data[0].lastname}
                     </div>
 

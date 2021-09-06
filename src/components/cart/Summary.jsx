@@ -125,7 +125,7 @@ class Suggest extends React.Component {
         var cartItems = JSON.parse(localStorage.getItem('CartItems'));
         let userInfo = isLoggedIn();
         if(userInfo[0] !== 1){
-            window.open("https://lamp.ms.wits.ac.za/home/s1671848/SD_Project/LoginForm","_self"); 
+            window.open("https://lamp.ms.wits.ac.za/home/s1671848/SD_Project/#/LoginForm","_self"); 
         }
         else{
           var itemname = "";
