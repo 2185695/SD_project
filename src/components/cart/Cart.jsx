@@ -85,7 +85,7 @@ function Cart() {
                                 ))}
 
                             </div>
-                            
+                            <Suggest />
                         </Row>
                     </div>
                 </div>
