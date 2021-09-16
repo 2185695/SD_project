@@ -13,10 +13,10 @@ describe('Register are working', () => {
 });
 
 describe('Register renders', () => {
-    it('renders without crashing', () => {
-        const { container } = render(<Register />);    
-        container.querySelector('.test')
-    });
+//     it('renders without crashing', () => {
+//         const { container } = render(<Register />);    
+//         container.querySelector('.test')
+//     });
 
     it('firstname field working', () => {
         const {container, getByLabelText } = render(<Register />); 
