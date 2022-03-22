@@ -14,6 +14,7 @@ import { BrowserRouter as Router, Switch, Route, withRouter} from "react-router-
 //HashRouter  '/home/s1671848/SD_Project/#'
 //"homepage": "https://lamp.ms.wits.ac.za/home/s1671848/SD_Project/",
 
+// just testing
 function App() {
   return (
     <div className="App">
